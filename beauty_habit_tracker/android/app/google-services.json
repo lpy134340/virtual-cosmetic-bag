@@ -1,0 +1,83 @@
+{
+  "project_info": {
+    "project_number": "945517996640",
+    "firebase_url": "https://beauty-habit-tracker-default-rtdb.firebaseio.com",
+    "project_id": "beauty-habit-tracker",
+    "storage_bucket": "beauty-habit-tracker.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:945517996640:android:6a8416d1974d81036af105",
+        "android_client_info": {
+          "package_name": "com.example.beauty_habit_tracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "945517996640-g0drl5aiciavb6sr3qea8g32a08blv83.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmroi30AN1D4b3ZTZDvD0lalWaqOCNunI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "945517996640-g0drl5aiciavb6sr3qea8g32a08blv83.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "945517996640-2pdscdjo9cdqi13j5jc89sf178p8udsd.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.chujun.beautyHabitTracker"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:945517996640:android:abeb97000b097d416af105",
+        "android_client_info": {
+          "package_name": "com.example.macos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "945517996640-g0drl5aiciavb6sr3qea8g32a08blv83.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmroi30AN1D4b3ZTZDvD0lalWaqOCNunI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "945517996640-g0drl5aiciavb6sr3qea8g32a08blv83.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "945517996640-2pdscdjo9cdqi13j5jc89sf178p8udsd.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.chujun.beautyHabitTracker"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

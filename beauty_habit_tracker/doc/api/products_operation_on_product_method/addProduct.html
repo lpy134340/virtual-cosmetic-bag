@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the addProduct function from the operation_on_product_method library, for the Dart programming language.">
+  <title>addProduct function - operation_on_product_method library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../" data-using-base-href="false">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <button id="sidenav-left-toggle" type="button">&nbsp;</button>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">beauty_habit_tracker</a></li>
+    <li><a href="../products_operation_on_product_method/products_operation_on_product_method-library.html">operation_on_product_method</a></li>
+    <li class="self-crumb">addProduct function</li>
+  </ol>
+  <div class="self-name">addProduct</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<main>
+
+
+  <div id="dartdoc-main-content" class="main-content">
+      <div>
+<h1><span class="kind-function">addProduct</span> function 
+    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
+ 
+</h1></div>
+
+    <section class="multi-line-signature">
+        
+
+<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
+<span class="name ">addProduct</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="addProduct-param-model"><span class="type-annotation"><a href="../products_product_model/ProductModel-class.html">ProductModel</a></span> <span class="parameter-name">model</span></span></li>
+</ol>)
+
+    </section>
+    
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">Future&lt;void&gt; addProduct(ProductModel model) async {
+  try {
+    String userId = FirebaseAuth.instance.currentUser!.uid;
+    String productsListPath = &#39;&#47;product_list_per_user&#39;;
+    var dataVar = FirebaseFirestore.instance
+        .collection(productsListPath)
+        .doc(userId)
+        .collection(&#39;&#47;products&#39;)
+        .doc()
+        .withConverter&lt;ProductModel&gt;(
+      fromFirestore: (snapshot, _) {
+        return ProductModel.fromJson(snapshot.data()!);
+      },
+      toFirestore: (productModel, _) {
+        return productModel.toJson();
+      },
+    );
+
+    await dataVar.set(
+      ProductModel(
+          brand: model.brand,
+          type: model.type,
+          name: model.name,
+          status: model.status,
+          eXD: model.eXD,
+          image: model.image,
+          pAO: model.pAO,
+          openOn: model.openOn,
+          finishedOn: model.finishedOn,
+          archivedOn: model.archivedOn,
+          addOn: model.addOn,
+          note: model.note),
+    );
+  } catch (error) {
+    debugPrint(error.toString());
+  }
+}</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../index.html">beauty_habit_tracker</a></li>
+  <li><a href="../products_operation_on_product_method/products_operation_on_product_method-library.html">operation_on_product_method</a></li>
+  <li class="self-crumb">addProduct function</li>
+</ol>
+
+
+    <h5>operation_on_product_method library</h5>
+    <ol>
+
+
+
+
+
+  <li class="section-title"><a href="../products_operation_on_product_method/products_operation_on_product_method-library.html#functions">Functions</a></li>
+  <li><a href="../products_operation_on_product_method/addProduct.html">addProduct</a></li>
+  <li><a href="../products_operation_on_product_method/archiveProduct.html">archiveProduct</a></li>
+  <li><a href="../products_operation_on_product_method/deleteProduct.html">deleteProduct</a></li>
+  <li><a href="../products_operation_on_product_method/getProduct.html">getProduct</a></li>
+  <li><a href="../products_operation_on_product_method/getStream.html">getStream</a></li>
+  <li><a href="../products_operation_on_product_method/getStreamArchived.html">getStreamArchived</a></li>
+  <li><a href="../products_operation_on_product_method/openProduct.html">openProduct</a></li>
+  <li><a href="../products_operation_on_product_method/updateProduct.html">updateProduct</a></li>
+  <li><a href="../products_operation_on_product_method/uploadImage.html">uploadImage</a></li>
+
+
+
+</ol>
+
+  </div><!--/.sidebar-offcanvas-left-->
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    beauty_habit_tracker
+      1.0.0+1
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+
